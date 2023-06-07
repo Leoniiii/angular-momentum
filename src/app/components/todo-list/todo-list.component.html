@@ -1,0 +1,20 @@
+<form class="example-form" (submit)="submitTodo()">
+  <mat-form-field class="example-full-width">
+    <mat-label>What are you going to do?</mat-label>
+    <input [(ngModel)]="newTodoItem" name="otro" matInput />
+  </mat-form-field>
+
+  <button mat-button type="submit">Submit</button>
+</form>
+
+<mat-card>
+  <mat-card-content>
+    <div *ngFor="let item of todoItems">
+      <mat-checkbox
+        [(ngModel)]="item.completed"
+        [appTaskCompleted]="item.completed"
+        >{{ item.title }}
+      </mat-checkbox>
+    </div>
+  </mat-card-content>
+</mat-card>
